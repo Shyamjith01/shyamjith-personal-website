@@ -95,8 +95,8 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="section-padding bg-background">
+      <div className="container-width">
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -105,12 +105,12 @@ const Projects = () => {
           className="space-y-16"
         >
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+            <h2 className="section-title text-gradient">
               Featured Projects
             </h2>
             <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A showcase of my recent work spanning booking systems, UI libraries, and interactive web applications.
+            <p className="section-subtitle">
+              A showcase of my recent work spanning booking systems, UI libraries, and interactive web applications
             </p>
           </div>
 
@@ -148,8 +148,9 @@ const Projects = () => {
                 whileHover={{ y: -5 }}
                 className={`group relative ${project.featured ? 'md:col-span-2 xl:col-span-1' : ''}`}
               >
-                <Card className="glass-card overflow-hidden h-full transition-all duration-500 hover:shadow-glow">
-                  <div className="relative h-48 bg-gradient-dark overflow-hidden">
+                <Card className="enhanced-card overflow-hidden h-full transition-all duration-500 hover:shadow-glow group">
+                  <div className="relative h-48 bg-gradient-card overflow-hidden"
+                  >
                     <div className="absolute inset-0 bg-gradient-primary opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-6xl font-bold text-primary/30">

@@ -38,8 +38,8 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 px-6 bg-gradient-dark">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="section-padding bg-card/30">
+      <div className="container-width">
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -48,23 +48,23 @@ const Skills = () => {
           className="space-y-16"
         >
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-              Technical Skills
+            <h2 className="section-title text-gradient">
+              Skills & Technologies
             </h2>
             <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive toolkit of modern technologies and frameworks that I use to build exceptional web experiences.
+            <p className="section-subtitle">
+              A comprehensive toolkit of modern technologies that I use to build exceptional web experiences
             </p>
           </div>
 
-          <div className="grid gap-6">
+          <div className="grid gap-4">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
                 initial={{ opacity: 0, x: -50 }}
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="glass-card p-6 rounded-xl"
+                transition={{ duration: 0.8, delay: index * 0.05 }}
+                className="enhanced-card p-6 rounded-2xl group hover:shadow-glow transition-all duration-300"
               >
                 <div className="flex justify-between items-center mb-3">
                   <div className="flex items-center gap-3">
@@ -78,14 +78,14 @@ const Skills = () => {
                   <span className="text-primary font-bold">{skill.level}%</span>
                 </div>
                 
-                <div className="relative h-3 bg-muted rounded-full overflow-hidden">
+                <div className="relative h-2 bg-muted rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                    transition={{ duration: 1.5, delay: index * 0.1 + 0.5 }}
-                    className={`h-full bg-gradient-to-r ${getCategoryColor(skill.category)} relative`}
+                    transition={{ duration: 1.5, delay: index * 0.05 + 0.5 }}
+                    className={`h-full bg-gradient-to-r ${getCategoryColor(skill.category)} relative overflow-hidden`}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
                   </motion.div>
                 </div>
               </motion.div>
@@ -96,7 +96,7 @@ const Skills = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="text-center glass-card p-8 rounded-xl"
+            className="text-center enhanced-card p-8 rounded-2xl"
           >
             <h3 className="text-2xl font-semibold text-foreground mb-4">
               Always Learning & Growing
