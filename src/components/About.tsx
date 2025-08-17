@@ -26,7 +26,7 @@ const About = () => {
   const highlights = [
     {
       icon: Code,
-      title: "2+ Years Experience",
+      title: "3+ Years Experience",
       description: "Frontend development with modern frameworks",
     },
     {
@@ -71,27 +71,36 @@ const About = () => {
               <h3 className="text-3xl lg:text-4xl font-semibold text-foreground leading-tight">
                 Transforming Ideas into Digital Reality
               </h3>
-              
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed text-start">
                 <p>
-                  With <span className="text-primary font-semibold">2 years and 9 months</span> of 
-                  dedicated experience in frontend development, I specialize in creating intuitive, 
-                  performant web applications using React.js, Next.js, and modern TypeScript.
+                  With <span className="text-primary font-semibold">3+ years</span> of hands-on experience
+                  in frontend development, I specialize in building modern, high-performance web applications
+                  using React.js, Next.js, and TypeScript. My focus is on creating smooth,
+                  intuitive user experiences with clean and maintainable code.
                 </p>
-                
+
                 <p>
-                  My expertise spans from building complex UI components with Mantine UI to 
-                  developing sophisticated booking engine systems for the travel and tourism industry. 
-                  I'm passionate about translating design concepts into pixel-perfect, 
-                  responsive interfaces that users love.
+                  Beyond the frontend, I also have experience on the <span className="text-secondary font-semibold">
+                    backend side</span>, working with Node.js and Express.js to build REST APIs,
+                  handle server-side logic, and integrate with databases. This full-stack understanding
+                  helps me collaborate seamlessly with backend teams and deliver end-to-end solutions.
                 </p>
-                
+
                 <p>
-                  Recognized with the <span className="text-accent font-semibold">Top Talent Award 2022</span>, 
-                  I bring a unique blend of technical proficiency and creative problem-solving to 
-                  every project, ensuring both functionality and aesthetic excellence.
+                  My professional journey includes building advanced booking engine systems
+                  for the travel and tourism industry, crafting complex UI components with Mantine UI,
+                  and delivering e-commerce and corporate websites with rich animations and responsiveness.
+                </p>
+
+                <p>
+                  Recognized with the <span className="text-accent font-semibold">Top Talent Award 2022</span>,
+                  I bring a unique balance of technical expertise, creative problem-solving,
+                  and attention to design detail — ensuring every project achieves both
+                  functionality and visual excellence.
                 </p>
               </div>
+
 
               <div className="flex flex-wrap gap-3">
                 {["React.js", "Next.js", "TypeScript", "GSAP", "Node.js"].map((tech) => (
@@ -105,12 +114,12 @@ const About = () => {
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-6">
+            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
               {highlights.map((highlight, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="enhanced-card p-6 rounded-2xl transition-all duration-300 hover:shadow-glow group"
+                  className="enhanced-card rewards-card py-12 px-10 rounded-2xl transition-all duration-300 hover:shadow-glow group text-start"
                 >
                   <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <highlight.icon className="w-6 h-6 text-primary-foreground" />

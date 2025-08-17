@@ -3,6 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  @media (max-width: 600px) {
+    padding: 2rem 0;
+  }
+
+  overflow-y: hidden;
 }
 
 .logo {
@@ -11,9 +17,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +30,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +48,38 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.for-mob-flexx {
+  @media (max-width: 600px) {
+    margin-top: 7rem !important;
+    padding-bottom: 3rem;
+  }
+}
+
+
+.rewards-card{
+  @media (max-width: 600px) {
+  
+    padding: 20px 20px !important;
+  }
+}
+
+.round-point{
+  @media (max-width: 600px) {
+    left: 5px !important;
+  }
+}
+
+.left-line{
+  @media (max-width: 600px) {
+    left: 10px !important;
+  }
+}
+
+.section-card{
+  @media (max-width: 600px) {
+    margin-left: 25px !important;
+  }
 }

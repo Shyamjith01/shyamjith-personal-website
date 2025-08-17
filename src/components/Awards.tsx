@@ -32,7 +32,8 @@ const Awards = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative cursor-pointer"
+            onClick={()=>window.open("https://www.linkedin.com/posts/shyam-jith-aa5015229_grateful-electronikmedia-emteam-activity-7046149940590354434-u5dc?utm_source=share&utm_medium=member_desktop&rcm=ACoAADkiCN0BfKOvI9FN4Mu331Jxa9-DfNXpAek")}
           >
             <div className="glass-card p-8 rounded-2xl relative overflow-hidden">
               {/* Background Animation */}
@@ -61,7 +62,7 @@ const Awards = () => {
                   <div className="w-full h-full bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow">
                     <Trophy className="w-12 h-12 text-primary-foreground" />
                   </div>
-                  
+
                   {/* Floating stars */}
                   {[...Array(6)].map((_, i) => (
                     <motion.div
@@ -95,7 +96,7 @@ const Awards = () => {
                   <h3 className="text-3xl font-bold text-foreground mb-2">
                     Top Talent Award 2022
                   </h3>
-                  
+
                   <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4">
                     <Calendar className="w-4 h-4" />
                     <span>December 2022</span>
@@ -105,8 +106,8 @@ const Awards = () => {
                   </div>
 
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                    Recognized for exceptional performance, innovative problem-solving, and outstanding contribution 
-                    to frontend development projects. This award acknowledges dedication to code quality, 
+                    Recognized for exceptional performance, innovative problem-solving, and outstanding contribution
+                    to frontend development projects. This award acknowledges dedication to code quality,
                     user experience excellence, and collaborative team leadership.
                   </p>
                 </motion.div>
@@ -116,21 +117,18 @@ const Awards = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.8, delay: 1.2 }}
-                  className="grid grid-cols-3 gap-6 mt-8 pt-8 border-t border-border/50"
+                  className="flex justify-center gap-12 mt-8 pt-8 border-t border-border/50"
                 >
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-1">15+</div>
-                    <div className="text-sm text-muted-foreground">Projects Completed</div>
-                  </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-secondary mb-1">100%</div>
                     <div className="text-sm text-muted-foreground">Client Satisfaction</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-accent mb-1">2.5+</div>
+                    <div className="text-2xl font-bold text-accent mb-1">3+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </div>
                 </motion.div>
+
               </div>
             </div>
           </motion.div>

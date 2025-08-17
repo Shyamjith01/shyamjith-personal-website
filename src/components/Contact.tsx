@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { handleDownloadCV } from '@/lib/utils';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -39,16 +40,20 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Github, label: "GitHub", href: "#", color: "hover:text-foreground" },
-    { icon: Linkedin, label: "LinkedIn", href: "#", color: "hover:text-primary" },
-    { icon: Twitter, label: "Twitter", href: "#", color: "hover:text-accent" },
+    { icon: Github, label: "GitHub", href: "https://github.com/Shyamjith01", color: "hover:text-foreground" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/shyam-jith-aa5015229/", color: "hover:text-primary" },
   ];
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "shyamjith.dev@email.com", href: "mailto:shyamjith.dev@email.com" },
-    { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
-    { icon: MapPin, label: "Location", value: "India", href: "#" },
+    { icon: Mail, label: "Email", value: "shyaaamjith@gmail.com", href: "mailto:shyaaamjith@gmail.com" },
+    { icon: Phone, label: "Phone", value: "+91 9400326351", href: "tel:+919400326351" },
+    { icon: MapPin, label: "Location", value: "Malappuram,Kerala", href: "#" },
   ];
+
+
+
+   
+
 
   return (
     <section id="contact" className="py-20 px-6 bg-gradient-dark">
@@ -81,7 +86,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
                   Send me a message
                 </h3>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -158,7 +163,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
                   Get in touch
                 </h3>
-                
+
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <motion.a
@@ -177,19 +182,16 @@ const Contact = () => {
                     </motion.a>
                   ))}
                 </div>
-              </div>
 
-              {/* Social Links */}
-              <div className="glass-card p-8 rounded-2xl">
-                <h3 className="text-xl font-semibold text-foreground mb-6">
+                <h3 className="text-xl mt-10 font-semibold text-foreground mb-6">
                   Follow me
                 </h3>
-                
+
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
-                      href={social.href}
+                      onClick={() => window.open(social.href, "_blank")}
                       whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                       className={`w-12 h-12 bg-muted/50 rounded-lg flex items-center justify-center text-muted-foreground ${social.color} transition-all duration-300`}
@@ -198,29 +200,16 @@ const Contact = () => {
                     </motion.a>
                   ))}
                 </div>
-              </div>
 
-              {/* Resume Download */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="glass-card p-8 rounded-2xl"
-              >
-                <div className="text-center">
-                  <h3 className="text-xl font-semibold text-foreground mb-4">
-                    Download Resume
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    Get a detailed overview of my experience and skills.
-                  </p>
-                  <Button
-                    size="lg"
-                    className="bg-gradient-accent hover:shadow-neon transition-all duration-300"
-                  >
-                    <Download className="w-5 h-5 mr-2" />
-                    Download CV
-                  </Button>
-                </div>
-              </motion.div>
+                <Button
+                  size="lg"
+                  onClick={()=>handleDownloadCV()}
+                  className="w-full bg-gradient-accent hover:shadow-neon transition-all duration-300 mt-9"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download CV
+                </Button>
+              </div>
             </motion.div>
           </div>
         </motion.div>

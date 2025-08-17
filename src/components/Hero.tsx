@@ -2,7 +2,9 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '@/assets/profile-image.jpg';
+import profileImage from '@/assets/profile-image.png';
+import { handleDownloadCV } from '@/lib/utils';
+import "../App.css"
 
 const Hero = () => {
   const typewriterRef = useRef<HTMLSpanElement>(null);
@@ -10,11 +12,11 @@ const Hero = () => {
   useEffect(() => {
     const text = "Frontend Developer & UI Specialist";
     const element = typewriterRef.current;
-    
+
     if (element) {
       let index = 0;
       element.textContent = '';
-      
+
       const typeText = () => {
         if (index < text.length) {
           element.textContent += text.charAt(index);
@@ -22,18 +24,18 @@ const Hero = () => {
           setTimeout(typeText, 100);
         }
       };
-      
+
       setTimeout(typeText, 1500);
     }
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center px-5 justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-background">
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card/50"></div>
-        
+
         {/* Floating Particles */}
         <div className="absolute inset-0">
           {[...Array(30)].map((_, i) => (
@@ -64,7 +66,7 @@ const Hero = () => {
         <div className="absolute bottom-32 left-16 w-32 h-32 bg-gradient-primary opacity-10 rounded-lg rotate-45 animate-pulse"></div>
       </div>
 
-      <div className="relative z-10 text-center container-width">
+      <div className="relative for-mob-flexx z-10 text-center container-width">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -105,22 +107,29 @@ const Hero = () => {
                 </div>
 
                 <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                  Passionate about creating exceptional user experiences with modern web technologies. 
-                  2+ years crafting scalable applications and innovative UI solutions.
+                  Passionate about creating exceptional user experiences with modern web technologies.
+                  3+ years crafting scalable applications and innovative UI solutions.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
+                    onClick={()=>{
+                      const element = document.getElementById('projects');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className="group relative overflow-hidden bg-gradient-primary text-primary-foreground hover:scale-105 transition-all duration-300 shadow-glow hover:shadow-neon px-8"
                   >
                     <span className="relative z-10">View My Work</span>
                     <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
-                  
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
+
+                  <Button
+                    size="lg"
+                    onClick={() => handleDownloadCV()}
+                    variant="outline"
                     className="border-primary/50 text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300 px-8"
                   >
                     Download Resume

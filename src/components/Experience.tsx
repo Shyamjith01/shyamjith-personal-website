@@ -14,26 +14,24 @@ const Experience = () => {
       company: "Gewan Infotech",
       position: "Senior Frontend Developer",
       period: "2023 - Present",
-      location: "Remote",
+      location: "On-site",
       description: "Leading frontend development for enterprise-level applications, specializing in React.js and TypeScript. Architecting scalable component libraries and implementing modern UI/UX patterns.",
       achievements: [
         "Architected and developed a comprehensive booking engine system",
         "Improved application performance by 40% through optimization techniques",
         "Mentored junior developers and established coding standards",
-        "Implemented advanced GSAP animations for enhanced user experience"
       ],
       technologies: ["React.js", "Next.js", "TypeScript", "GSAP", "Node.js"]
     },
     {
       id: 2,
       company: "Electronikmedia",
-      position: "Frontend Developer",
+      position: "Software Developer",
       period: "2022 - 2023",
-      location: "Hybrid",
+      location: "Remote",
       description: "Developed responsive web applications using React.js and modern CSS frameworks. Collaborated with design teams to translate mockups into pixel-perfect interfaces.",
       achievements: [
-        "Built 15+ responsive web applications from scratch",
-        "Implemented Mantine UI component library across projects",
+        "Mainly working on the angular applications",
         "Received Top Talent Award 2022 for exceptional performance",
         "Reduced development time by 30% through reusable components"
       ],
@@ -48,7 +46,6 @@ const Experience = () => {
       description: "Started my journey in web development, focusing on HTML5, CSS3, and JavaScript fundamentals. Gained experience in version control and collaborative development.",
       achievements: [
         "Developed foundational skills in modern web technologies",
-        "Contributed to 10+ client projects successfully",
         "Learned and implemented responsive design principles",
         "Collaborated effectively in agile development environment"
       ],
@@ -57,8 +54,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-6 bg-gradient-dark">
-      <div className="max-w-4xl mx-auto">
+    <section id="experience" className="py-10 px-6 bg-gradient-dark">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -78,7 +75,7 @@ const Experience = () => {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30 md:left-1/2 md:transform md:-translate-x-0.5"></div>
+            <div className="absolute left-8 left-line  top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30 md:left-1/2 md:transform md:-translate-x-0.5"></div>
 
             <div className="space-y-12">
               {experiences.map((exp, index) => (
@@ -92,12 +89,12 @@ const Experience = () => {
                   }`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-8 w-4 h-4 bg-gradient-primary rounded-full shadow-glow md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+                  <div className="absolute round-point left-8 w-4 h-4 bg-gradient-primary rounded-full shadow-glow md:left-1/2 md:transform md:-translate-x-1/2 z-10">
                     <div className="absolute inset-1 bg-primary rounded-full animate-pulse-glow"></div>
                   </div>
 
                   {/* Content Card */}
-                  <div className={`ml-20 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+                  <div className={`ml-20 md:ml-0 md:w-6/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}  section-card`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       className="glass-card p-6 rounded-xl transition-all duration-300 hover:shadow-glow"
@@ -125,13 +122,13 @@ const Experience = () => {
                         </div>
                       </div>
 
-                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                      <p className="text-start text-muted-foreground mb-4 leading-relaxed">
                         {exp.description}
                       </p>
 
                       <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground">Key Achievements:</h4>
-                        <ul className="space-y-2">
+                        <h4 className="font-semibold text-start text-foreground">Key Achievements:</h4>
+                        <ul className="space-y-2 text-start">
                           {exp.achievements.map((achievement, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                               <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>

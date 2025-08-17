@@ -4,94 +4,91 @@ import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  });
+  }); 
+
+   
 
   const [activeFilter, setActiveFilter] = useState('all');
 
   const projects = [
     {
       id: 1,
-      title: "Travel Booking Engine",
-      description: "Comprehensive booking system for travel and tourism industry with real-time availability, payment integration, and user management.",
+      title: "Dealz B2C Travel Booking Engine",
+      description:
+        "End-to-end B2C booking platform for flights and hotels, including search, booking, and payment gateway integration. Currently working on transfer service module.",
       category: "booking",
-      tech: ["React.js", "Next.js", "TypeScript", "Node.js", "Express.js"],
+      tech: ["Next.js", "TypeScript", "Mantine UI", "Node.js", "Express.js"],
       image: "/api/placeholder/500/300",
-      demoUrl: "#",
+      demoUrl: "https://dealz.gewaninfotech.com/",
       githubUrl: "#",
-      featured: true
+      featured: true,
     },
     {
       id: 2,
-      title: "Interactive UI Components Library",
-      description: "Reusable component library built with Mantine UI and TypeScript, featuring customizable themes and accessibility-first design.",
-      category: "ui",
-      tech: ["React.js", "TypeScript", "Mantine UI", "Storybook"],
+      title: "Nexus Travel Portal",
+      description:
+        "Comprehensive corporate travel booking system with multi-level authentication, employee modules, and admin dashboards.",
+      category: "booking",
+      tech: ["React.js", "Next.js", "TypeScript", "Mantine UI"],
       image: "/api/placeholder/500/300",
-      demoUrl: "#",
+      demoUrl: "https://nexusemployeeuiqa.gewaninfotech.com",
       githubUrl: "#",
-      featured: true
+      featured: true,
     },
     {
       id: 3,
-      title: "Real-time Dashboard",
-      description: "Modern analytics dashboard with real-time data visualization, interactive charts, and responsive design.",
-      category: "web",
-      tech: ["React.js", "D3.js", "WebSocket", "CSS3"],
+      title: "Gewan Infotech Website",
+      description:
+        "Corporate website for Gewan Infotech built with interactive UI and GSAP animations, highlighting services, case studies, and booking systems.",
+      category: "animation",
+      tech: ["Next.js", "GSAP", "TailwindCSS"],
       image: "/api/placeholder/500/300",
-      demoUrl: "#",
+      demoUrl: "https://gewaninfotech.com/",
       githubUrl: "#",
-      featured: false
+      featured: false,
+    },
+    {
+      id: 7,
+      title: "Evolve Event Booking Website (Freelance)",
+      description:
+        "Freelance project: Evolve 2025 event booking site for Brand Stories, featuring event details, ticketing, agenda, and interactive UI for EVOLVE 2025 leadership conference.",
+      category: "animation",
+      tech: ["Next.js", "TailwindCSS", "React.js"],
+      image: "/api/placeholder/500/300",
+      demoUrl: "https://www.brandstories.org.in/",
+      githubUrl: "https://github.com/Shyamjith01/Evolve-frontend",
+      featured: false,
     },
     {
       id: 4,
       title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with product management, cart functionality, and payment integration.",
+      description:
+        "Full-stack e-commerce project with product catalog, shopping cart, order management, and Stripe-based payments.",
       category: "web",
       tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
       image: "/api/placeholder/500/300",
       demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Animation Showcase",
-      description: "Collection of smooth GSAP animations and micro-interactions demonstrating advanced frontend techniques.",
-      category: "animation",
-      tech: ["React.js", "GSAP", "Framer Motion", "CSS3"],
-      image: "/api/placeholder/500/300",
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Mobile-First Web App",
-      description: "Progressive web application with offline capabilities, push notifications, and mobile-optimized interface.",
-      category: "web",
-      tech: ["React.js", "PWA", "Service Workers", "IndexedDB"],
-      image: "/api/placeholder/500/300",
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    }
+      githubUrl: "https://github.com/Shyamjith01/E-commerce-shopiyCart",
+      featured: false,
+    },  
   ];
+
 
   const filters = [
     { label: "All Projects", value: "all" },
-    { label: "Booking Systems", value: "booking" },
-    { label: "UI Components", value: "ui" },
+    { label: "Booking Systems", value: "booking" }, 
     { label: "Web Applications", value: "web" },
     { label: "Animations", value: "animation" }
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   return (
@@ -121,11 +118,10 @@ const Projects = () => {
                 key={filter.value}
                 variant={activeFilter === filter.value ? "default" : "outline"}
                 onClick={() => setActiveFilter(filter.value)}
-                className={`transition-all duration-300 ${
-                  activeFilter === filter.value
+                className={`transition-all duration-300 ${activeFilter === filter.value
                     ? "bg-gradient-primary text-primary-foreground shadow-glow"
                     : "border-primary/30 text-primary hover:bg-primary/10"
-                }`}
+                  }`}
               >
                 <Filter className="w-4 h-4 mr-2" />
                 {filter.label}
@@ -157,7 +153,7 @@ const Projects = () => {
                         {project.title.split(' ').map(word => word[0]).join('')}
                       </div>
                     </div>
-                    
+
                     {project.featured && (
                       <div className="absolute top-4 right-4">
                         <span className="bg-gradient-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
@@ -189,16 +185,19 @@ const Projects = () => {
                     </div>
 
                     <div className="flex gap-3 pt-4">
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
+                        disabled={project.demoUrl === '#'}
+                        onClick={()=>window.open(project.demoUrl)}
                         className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Demo
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline" 
+                      </Button> 
+                      <Button
+                      disabled={project.githubUrl === '#'}
+                        size="sm"
+                        variant="outline"
                         className="border-primary/30 text-primary hover:bg-primary/10"
                       >
                         <Github className="w-4 h-4 mr-2" />
@@ -217,9 +216,10 @@ const Projects = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-center"
           >
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
+              onClick={() => window.open('https://github.com/Shyamjith01')}
               className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300"
             >
               View All Projects on GitHub
