@@ -15,10 +15,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-gradient">
+            <h3 className="text-2xl font-bold text-gradient text-start">
               Shyamjith.dev
             </h3>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed text-start pr-9">
               Frontend Developer passionate about creating exceptional digital experiences 
               with modern web technologies and innovative design solutions.
             </p>
@@ -26,8 +26,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Quick Links</h4>
-            <div className="grid grid-cols-2 gap-2">
+            <h4 className="text-lg font-semibold text-foreground text-start">Quick Links</h4>
+            <div className="grid grid-cols-2 gap-2 text-start">
               {[
                 { label: 'About', href: '#about' },
                 { label: 'Skills', href: '#skills' },
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Connect Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-start">
             <h4 className="text-lg font-semibold text-foreground">Let's Connect</h4>
             <p className="text-muted-foreground text-sm mb-4">
               Follow me for updates on latest projects and tech insights.
@@ -80,11 +80,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border/50">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border/50 ">
           <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4 md:mb-0">
-            <span>© {currentYear} Shyamjith Shivashankaran. Made with</span>
+            <span>© {currentYear} Shyamjith T</span>
             <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-            <span>using React & TypeScript</span>
           </div>
 
           {/* Back to Top Button */}

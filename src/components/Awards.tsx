@@ -33,7 +33,7 @@ const Awards = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative cursor-pointer"
-            onClick={()=>window.open("https://www.linkedin.com/posts/shyam-jith-aa5015229_grateful-electronikmedia-emteam-activity-7046149940590354434-u5dc?utm_source=share&utm_medium=member_desktop&rcm=ACoAADkiCN0BfKOvI9FN4Mu331Jxa9-DfNXpAek")}
+            onClick={() => window.open("https://www.linkedin.com/posts/shyam-jith-aa5015229_grateful-electronikmedia-emteam-activity-7046149940590354434-u5dc?utm_source=share&utm_medium=member_desktop&rcm=ACoAADkiCN0BfKOvI9FN4Mu331Jxa9-DfNXpAek")}
           >
             <div className="glass-card p-8 rounded-2xl relative overflow-hidden">
               {/* Background Animation */}
@@ -97,12 +97,18 @@ const Awards = () => {
                     Top Talent Award 2022
                   </h3>
 
-                  <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4">
-                    <Calendar className="w-4 h-4" />
-                    <span>December 2022</span>
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4 flex-wrap">
+
+                    <div className='flex items-center gap-2'>
+                      <Calendar className="w-4 h-4" />
+                      <span>December 2022</span>
+                    </div>
+
                     <span className="mx-2">•</span>
-                    <Award className="w-4 h-4" />
-                    <span>Electronikmedia</span>
+                    <div className='flex items-center gap-2'>
+                      <Award className="w-4 h-4" />
+                      <span>Electronikmedia</span>
+                    </div>
                   </div>
 
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
